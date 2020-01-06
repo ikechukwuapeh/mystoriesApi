@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+
+
+RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^users/([a-zA-Z0-9]+)$ files/users.php?user_id=$1  [L]
+RewriteRule ^users$ files/users.php  [L]
+
+RewriteRule ^stories/([a-zA-Z0-9]+)$ files/stories.php?story_id=$1  [L]
+RewriteRule ^stories$ files/stories.php  [L]
+RewriteRule ^stories/category/([a-zA-Z0-9]+)$ files/categorystories.php?category_id=$1  [L]
+
+RewriteRule ^categories/([a-zA-Z0-9]+)$ files/categories.php?category_id=$1  [L]
+RewriteRule ^categories$ files/categories.php  [L]
+
+RewriteRule ^replies/([a-zA-Z0-9]+)$ files/replies.php?story_id=$1  [L]
+RewriteRule ^replies$ files/replies.php  [L]
+
+
